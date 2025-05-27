@@ -48,16 +48,28 @@ jobs:
           spec: |
             ${{ github.event.inputs.tag && format('cypress/e2e/**/*{0}*.cy.js', github.event.inputs.tag) || 'cypress/e2e/**/*.cy.js' }}
           record: false
+          install: false
+          command: |
+            npx cypress run \
+            --reporter cypress-mochawesome-reporter \
+            --reporter-options reportDir=cypress/results/json,overwrite=false,html=false,json=tru
 
       - name: Verifica arquivos gerados pelo Cypress
         run: ls -R cypress/
+
+      - name: Verifica se arquivos JSON existem
+        run: |
+          if ! ls cypress/results/*.json 1> /dev/null 2>&1; then
+          echo "❌ Nenhum arquivo JSON encontrado. Verifique se o Cypress está configurado corretamente."
+          exit 1
+          fi
 
       - name: Geração do relatório HTML
         run: |
           mkdir -p cypress-report
           ls -R cypress/results # Adicione esta linha para depuração
-          npx mochawesome-merge cypress/results/*.json > cypress/report/mochawesome.json
-          npx marge cypress/report/mochawesome.json -o cypress/report/html
+          npx mochawesome-merge cypress/results/json/*.json > cypress-report/mochawesome.json
+          npx marge cypress-report/mochawesome.json -o cypress-report/html
 
       - name: Publicação no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

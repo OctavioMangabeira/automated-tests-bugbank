@@ -52,8 +52,9 @@ jobs:
       - name: Geração do relatório HTML
         run: |
           mkdir -p cypress-report
-          ls -R cypress/report/html/ # Adicione esta linha para depuração
-          npx marge cypress/report/html/*.json -o cypress/report/html
+          ls -R cypress/results # Adicione esta linha para depuração
+          npx mochawesome-merge cypress/results/*.json > cypress/report/mochawesome.json
+          npx marge cypress/report/mochawesome.json -o cypress/report/html
 
       - name: Publicação no GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

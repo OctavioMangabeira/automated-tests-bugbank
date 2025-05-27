@@ -49,6 +49,9 @@ jobs:
             ${{ github.event.inputs.tag && format('cypress/e2e/**/*{0}*.cy.js', github.event.inputs.tag) || 'cypress/e2e/**/*.cy.js' }}
           record: false
 
+      - name: Verifica arquivos gerados pelo Cypress
+        run: ls -R cypress/
+
       - name: Geração do relatório HTML
         run: |
           mkdir -p cypress-report

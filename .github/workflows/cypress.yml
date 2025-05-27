@@ -41,13 +41,14 @@ jobs:
       - name: Instalação das dependências dos testes
         run: npm ci
 
-      - name: Execução dos testes Cypress
+      - name: Execução dos testes Cypress com mochawesome
         run: |
-             --browser ${{ github.event.inputs.browser || 'chrome' }} \
-             --spec "${{ github.event.inputs.tag && format('cypress/e2e/**/*{0}*.cy.js', github.event.inputs.tag) || 'cypress/e2e/**/*.cy.js' }}" \
-             --reporter cypress-mochawesome-reporter \
-             --reporter-options reportDir=cypress/results/json,overwrite=false,html=false,json=true
-          
+          npx cypress run \
+          --browser ${{ github.event.inputs.browser || 'chrome' }} \
+          --spec "${{ github.event.inputs.tag && format('cypress/e2e/**/*{0}*.cy.js', github.event.inputs.tag) || 'cypress/e2e/**/*.cy.js' }}" \
+          --reporter cypress-mochawesome-reporter \
+          --reporter-options "reportDir=cypress/results/json,overwrite=false,html=false,json=true"
+
 
       - name: Verifica arquivos gerados pelo Cypress
         run: ls -R cypress/

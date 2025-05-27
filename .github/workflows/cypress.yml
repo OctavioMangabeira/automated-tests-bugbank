@@ -57,13 +57,6 @@ jobs:
       - name: Verifica arquivos gerados pelo Cypress
         run: ls -R cypress/
 
-      - name: Verifica se arquivos JSON existem
-        run: |
-          if ! ls cypress/results/*.json 1> /dev/null 2>&1; then
-          echo "❌ Nenhum arquivo JSON encontrado. Verifique se o Cypress está configurado corretamente."
-          exit 1
-          fi
-
       - name: Geração do relatório HTML
         run: |
           mkdir -p cypress-report

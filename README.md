@@ -59,8 +59,8 @@ O relatório pode ser aberto pelo navegador.
 
 Este projeto de automação de testes foi estruturado seguindo o padrão Page Object Model (POM), uma abordagem que promove a organização, reutilização de código e manutenção facilitada dos testes end-to-end.
 
-cypress/
-├── e2e/                   # Arquivos de teste (especificações .cy.js ou .feature)
+<p> cypress/ </p>P
+<p>├── e2e/                   # Arquivos de teste (especificações .cy.js ou .feature)</p>
 │   ├── register.cy.js
 │   └── login.cy.js
 └── fixtures/              # Massa de dados (JSON) usados nos testes

@@ -61,9 +61,9 @@ Este projeto de automação de testes foi estruturado seguindo o padrão Page Ob
 
 <br> cypress/ </br>
 <br>├── e2e/                   # Arquivos de teste (especificações .cy.js ou .feature)</br>
-│   ├── register.cy.js
-│   └── login.cy.js
-└── fixtures/              # Massa de dados (JSON) usados nos testes
+<br>│   ├── register.cy.js </br>
+<br>│   └── login.cy.js  </br>
+<br>└── fixtures/              # Massa de dados (JSON) usados nos testes </br>
 ├── support/
 ├── pages/                 # Objetos de página (Page Objects)
 │   ├── HomePage.js

@@ -9,16 +9,16 @@ module.exports = defineConfig({
       mochawesome(on, config);
       return config;
     },
-    reporter: 'cypress-mochawesome-reporter',
-    reporterOptions: {
-      reportDir: 'cypress/results/json',
-      embeddedScreenshots: true,
-      inlineAssets: true,
-      overwrite: false,
-      html: false,
-      json: true,
-      timestamp: 'yyyy-mm-dd_HH-MM-ss'
-    },
+    // reporter: 'cypress-mochawesome-reporter',
+    // reporterOptions: {
+    //   reportDir: 'cypress/results/json',
+    //   embeddedScreenshots: true,
+    //   inlineAssets: true,
+    //   overwrite: false,
+    //   html: false,
+    //   json: true,
+    //   timestamp: 'yyyy-mm-dd_HH-MM-ss'
+    // },
     specPattern: 'cypress/e2e/**/*.cy.js',
     baseUrl: 'http://localhost:3000/',
     supportFile: 'cypress/support/e2e.js',

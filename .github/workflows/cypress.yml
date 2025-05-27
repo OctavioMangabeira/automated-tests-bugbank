@@ -1,0 +1,49 @@
+name: Cypress CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 11 * * *'  # 08:00 BRT (UTC+3)
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag do cenário'
+        required: false
+        default: ''
+      browser:
+        description: 'Navegador (chrome, firefox, edge)'
+        required: false
+        default: 'chrome'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalação das dependências
+        run: npm ci
+
+      - name: Execução dos testes Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: ${{ github.event.inputs.browser || 'chrome' }}
+          spec: |
+            ${{ github.event.inputs.tag && format('cypress/e2e/**/*{0}*.cy.js', github.event.inputs.tag) || 'cypress/e2e/**/*.cy.js' }}
+          record: false
+
+      - name: Geração do relatório HTML
+        run: |
+          mkdir -p cypress-report
+          npx mochawesome-merge cypress/results/*.json > cypress-report/report.json
+          npx marge cypress-report/report.json -f report -o cypress-report
+
+      - name: Publicação no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress-reports

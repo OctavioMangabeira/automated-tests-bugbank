@@ -52,7 +52,7 @@ jobs:
       - name: Geração do relatório HTML
         run: |
           mkdir -p cypress-report
-          npx mochawesome-merge cypress/report/html/.jsons/*.json > cypress-report/report.json
+          npx mochawesome-merge cypress/report/html/**/*.json > cypress-report/report.json
           npx marge cypress-report/report.json -f report -o cypress-report
 
       - name: Publicação no GitHub Pages

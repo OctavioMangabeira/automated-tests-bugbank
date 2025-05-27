@@ -40,15 +40,15 @@ npm run gui
 
 Para rodar o Cypress por modo headless é preciso realizar o seguinte comando:
 
-npx cypress cli
+npm run cli
 
 Para rodar os testes do fluxo básico é preciso realizar o seguinte comando:
 
-npx cypress run --env grepTags=@basicflow
+npm run basicflow
 
 Para rodar os testes do fluxo adicional é preciso realizar o seguinte comando:
 
-npx cypress run --env grepTags=@additionalflow
+npm run additionalflow
 
 <h2 dir="auto">Como gerar e acessar o relatório de execução</h2> 
 

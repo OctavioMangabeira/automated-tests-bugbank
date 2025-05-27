@@ -30,7 +30,7 @@ jobs:
 
       - name: Instalar dependências da aplicação
         working-directory: ./app
-        run: npm ci
+        run: npm install
 
       - name: Iniciar aplicação
         working-directory: ./app

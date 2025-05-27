@@ -13,6 +13,7 @@
 * [Como gerar e acessar o relatório de execução](#como-gerar-e-acessar-o-relatório-de-execução)
 * [Explicação da estrutura da arquitetura do projeto](#explicação-da-estrutura-da-arquitetura-do-projeto)
 * [Resultados](#resultados)
+* [Problemas encontrados](#problemas-encontrados)
 
 <h2 dir="auto">Descrição do Projeto</h2> 
 
@@ -49,9 +50,31 @@ Para rodar os testes do fluxo adicional é preciso realizar o seguinte comando:
 
 npx cypress run --env grepTags=@additionalflow
 
-<h2 dir="auto">Como executar os testes com o Cypress</h2> 
-
 <h2 dir="auto">Como gerar e acessar o relatório de execução</h2> 
 
+Para gerar o relatório é necessário rodar os testes por linha de comando executando npm run cli, após isso o relatório vai estar disponível para o acesso na pasta results/json.
+O relatório pode ser aberto pelo navegador.
+
+<h2 dir="auto">Explicação da estrutura da arquitetura do projeto</h2>
+
+Este projeto de automação de testes foi estruturado seguindo o padrão Page Object Model (POM), uma abordagem que promove a organização, reutilização de código e manutenção facilitada dos testes end-to-end.
+
+cypress/
+├── e2e/                   # Arquivos de teste (especificações .cy.js ou .feature)
+│   ├── register.cy.js
+│   └── login.cy.js
+└── fixtures/              # Massa de dados (JSON) usados nos testes
+├── support/
+├── pages/                 # Objetos de página (Page Objects)
+│   ├── HomePage.js
+│   └── LoginPage.js
+│   ├── commands.js        # Comandos customizados (Cypress.Commands.add)
+│   ├── e2e.js             # Setup global dos testes
+
+Cada página da aplicação possui seus elementos mapeados no arquivo elements.js e suas classes e funções estão mapeadas no arquivo index.js
+
+<h2 dir="auto">Resultados</h2>
+
 * Pipeline CI/CD: <a href="https://github.com/OctavioMangabeira/buger-eats-cypress-discovery/actions">GitHub Actions</a><br />
-* Relatórios com os resultados dos testes: <a href="https://dashboard.cypress.io/projects/v5u7x2/runs?branches=%5B%5D&committers=%5B%5D&flaky=%5B%5D&page=1&status=%5B%5D&tags=%5B%5D&timeRange=%7B%22startDate%22%3A%221970-01-01%22%2C%22endDate%22%3A%222038-01-19%22%7D" rel="nofollow">Cypress dashboard</a>
+
+<h2 dir="auto">Problemas encontrados</h2>

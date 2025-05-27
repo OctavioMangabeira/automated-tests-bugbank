@@ -64,12 +64,12 @@ Este projeto de automação de testes foi estruturado seguindo o padrão Page Ob
 <br>│   ├── register.cy.js </br>
 <br>│   └── login.cy.js  </br>
 <br>└── fixtures/              # Massa de dados (JSON) usados nos testes </br>
-├── support/
-├── pages/                 # Objetos de página (Page Objects)
-│   ├── HomePage.js
-│   └── LoginPage.js
-│   ├── commands.js        # Comandos customizados (Cypress.Commands.add)
-│   ├── e2e.js             # Setup global dos testes
+<br>├── support/ </br>
+<br>├── pages/                 # Objetos de página (Page Objects) </br>
+<br>│   ├── HomePage.js </br>
+<br>│   └── LoginPage.js  </br>
+<br>│   ├── commands.js        # Comandos customizados (Cypress.Commands.add) </br>
+<br>│   ├── e2e.js             # Setup global dos testes </br>
 
 Cada página da aplicação possui seus elementos mapeados no arquivo elements.js e suas classes e funções estão mapeadas no arquivo index.js
 

@@ -47,8 +47,11 @@ jobs:
           --browser ${{ github.event.inputs.browser || 'chrome' }} \
           --spec "${{ github.event.inputs.tag && format('cypress/e2e/**/*{0}*.cy.js', github.event.inputs.tag) || 'cypress/e2e/**/*.cy.js' }}" \
 
+      - name: Limpar diretório de relatórios
+        run: rm -rf cypress/results/json || true
+
       - name: Verifica arquivos gerados pelo Cypress
-        run: ls -R cypress/
+        run: ls -R cypress/results/json
 
       - name: Verifica se arquivos JSON existem
         run: |

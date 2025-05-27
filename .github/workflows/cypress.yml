@@ -53,7 +53,7 @@ jobs:
         run: |
           mkdir -p cypress-report
           ls -R cypress/report/html/ # Adicione esta linha para depuração
-          npx mochawesome-merge cypress/report/html/*.json > cypress/report/mochawesome.json
+          npx mochawesome-merge cypress/report/html/**/.json > cypress/report/mochawesome.json
           npx marge cypress/report/mochawesome.json -o cypress/report/html
 
       - name: Publicação no GitHub Pages

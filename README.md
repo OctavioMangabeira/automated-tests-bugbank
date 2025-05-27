@@ -29,6 +29,7 @@ Visual Studio Code
 <h2 dir="auto">Instalação das dependências</h2> 
 
 * Realizar o git clone do projeto;
+<p> git clone https://github.com/OctavioMangabeira/automated-tests-bugbank.git </p>
 * Abrir o projeto no Visual Studio Code;
 * Abrir o terminal do Visual Studio Code e digitar o comando npm install.
 
@@ -72,9 +73,9 @@ Este projeto de automação de testes foi estruturado seguindo o padrão Page Ob
 <br>│   ├── e2e.js             # Setup global dos testes </br>
 
 Cada página da aplicação possui seus elementos mapeados no arquivo elements.js e suas classes e funções estão mapeadas no arquivo index.js.
-A massa de dados está na pasta fixtures, no arquivo dataUtils.js.
-O relatório HTML gerado está na pasta results/json.
-O comandos personalizados estão no arquivo commands.js.
+<p> A massa de dados está na pasta fixtures, no arquivo dataUtils.js. </p>
+<p>O relatório HTML gerado está na pasta results/json.</p>
+<p>O comandos personalizados estão no arquivo commands.js.</p>
 
 <h2 dir="auto">Resultados</h2>
 

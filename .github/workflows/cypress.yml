@@ -51,7 +51,7 @@ jobs:
         run: rm -rf cypress/results/json || true
 
       - name: Verifica arquivos gerados pelo Cypress
-        run: ls -R cypress/results/json
+        run: ls -R cypress/
 
       - name: Verifica se arquivos JSON existem
         run: |

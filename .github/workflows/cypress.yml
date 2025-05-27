@@ -25,7 +25,20 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      - name: Instalação das dependências
+      - name: Clonar aplicação (bugbank-ui)
+        run: git clone https://github.com/jhonatasmatos/bugbank-ui.git app
+
+      - name: Instalar dependências da aplicação
+        working-directory: ./app
+        run: npm ci
+
+      - name: Iniciar aplicação
+        working-directory: ./app
+        run: |
+          npm run start &  # ou o script correto para iniciar a aplicação
+          npx wait-on http://localhost:3000
+
+      - name: Instalação das dependências dos testes
         run: npm ci
 
       - name: Execução dos testes Cypress

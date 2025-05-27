@@ -8,8 +8,8 @@
 
 * [Descrição do Projeto](#descrição-do-projeto)
 * [Requisitos para instalação](#requisitos-para-instalação)
-* [Instalação das dependências](#instalação)
-* [Como executar os testes com o Cypress](#como-iniciar-o-cypress)
+* [Instalação das dependências](#instalação-das-dependências)
+* [Como executar os testes com o Cypress](#como-executar-os-testes-com-o-cypress)
 * [Como gerar e acessar o relatório de execução](#como-gerar-e-acessar-o-relatório-de-execução)
 * [Explicação da estrutura da arquitetura do projeto](#explicação-da-estrutura-da-arquitetura-do-projeto)
 * [Resultados](#resultados)

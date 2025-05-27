@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gui": "npx cypress open",
+    "cli": "npx cypress run",
+    "basicflow": "npx cypress run --env grepTags=@basicflow",
+    "additionalflow": "npx cypress run --env grepTags=@additionalflow"
   },
   "keywords": [],
   "author": "",

@@ -2,9 +2,9 @@ name: Cypress CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
   schedule:
     - cron: '0 11 * * *'  # 08:00 BRT (UTC+3)
   workflow_dispatch:

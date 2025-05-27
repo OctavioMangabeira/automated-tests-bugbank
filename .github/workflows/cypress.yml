@@ -35,7 +35,9 @@ jobs:
       - name: Iniciar aplicação
         working-directory: ./app
         run: |
-          npm run start &  # ou o script correto para iniciar a aplicação
+          nohup npm start > app.log 2>&1 &
+          npx wait-on http://localhost:3000
+
           npx wait-on http://localhost:3000
 
       - name: Instalação das dependências dos testes

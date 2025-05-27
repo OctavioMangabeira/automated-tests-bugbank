@@ -71,10 +71,13 @@ Este projeto de automação de testes foi estruturado seguindo o padrão Page Ob
 <br>│   ├── commands.js        # Comandos customizados (Cypress.Commands.add) </br>
 <br>│   ├── e2e.js             # Setup global dos testes </br>
 
-Cada página da aplicação possui seus elementos mapeados no arquivo elements.js e suas classes e funções estão mapeadas no arquivo index.js
+Cada página da aplicação possui seus elementos mapeados no arquivo elements.js e suas classes e funções estão mapeadas no arquivo index.js.
+A massa de dados está na pasta fixtures, no arquivo dataUtils.js.
+O relatório HTML gerado está na pasta results/json.
+O comandos personalizados estão no arquivo commands.js.
 
 <h2 dir="auto">Resultados</h2>
 
-* Pipeline CI/CD: <a href="https://github.com/OctavioMangabeira/buger-eats-cypress-discovery/actions">GitHub Actions</a><br />
+* Pipeline CI/CD: <a href="https://github.com/OctavioMangabeira/automated-tests-bugbank/actions">GitHub Actions</a><br />
 
 <h2 dir="auto">Problemas encontrados</h2>

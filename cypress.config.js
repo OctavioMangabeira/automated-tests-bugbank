@@ -8,7 +8,7 @@ module.exports = defineConfig({
     reportPageTitle: 'Relatório de Testes',
     embeddedScreenshots: true,
     inlineAssets: true,
-    reportDir: 'cypress/reports/html',
+    reportDir: 'cypress/report/html',
     overwrite: true,
     html: true,
     json: false

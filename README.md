@@ -84,6 +84,6 @@ Cada página da aplicação possui seus elementos mapeados no arquivo elements.j
 <h2 dir="auto">Problemas encontrados</h2>
 
 <p> Não foi possível gerar o relatório de execução e disponibilizá-lo no GitHub Pages devido a uma issue na dependência mochawesome-report em que não está sendo possível gerar os arquivos json que depois são convertidos para o arquivo HTML. </p>
-<p> Em ambiente loca, os arquivos JSON estão sendo gerados e posteriormente convertidos normalmente. </p>
+<p> Em ambiente local, os arquivos JSON estão sendo gerados e posteriormente convertidos normalmente. </p>
 <p> Mais informações sobre o problema, no link abaixo: https://github.com/cypress-io/cypress/discussions/21099 </p>
 
